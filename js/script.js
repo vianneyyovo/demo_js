@@ -99,9 +99,25 @@
 
 // Evenement 1
 function gestionnaireEvenement1() {
-  // alert("Welcome, it is your evenement 1");
-  const titleMove = document.querySelectorAll('title');
+  alert("Welcome, it is your mouseover event (evenement 1)");
+  // const titleMove = document.querySelectorAll('title');
+  anime.timeline({loop: true})
+  .add({
+    targets: '.title',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 800,
+    delay: (el, i) => 800 * i
+  }).add({
+    targets: '.title',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
 }
+
 // Evenement 2
 function gestionnaireEvenement2(event) {
   alert("It is your click event (evenement 2)");
@@ -130,9 +146,8 @@ function gestionnaireEvenement6() {
   alert("It is your annimate event (evenement 6)")
 }
 
-// document.getElementById('myZone').addEventListener('mouseover', gestionnaireEvenement1);
+document.getElementById('myZone').addEventListener('mouseover', gestionnaireEvenement1);
 document.getElementById('myZone').addEventListener('click', gestionnaireEvenement2);
 document.getElementById('myZone').addEventListener('dblclick', gestionnaireEvenement3);
 document.getElementById('myZone').addEventListener('mouseout', gestionnaireEvenement4);
 document.getElementById('myZone').addEventListener('mousemove', gestionnaireEvenement5);
-document.getElementById('myZone').addEventListener('mousemove', gestionnaireEvenement6 );
