@@ -1,0 +1,17 @@
+#myZone{
+    background-color: red;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
